@@ -1,0 +1,54 @@
+// 文档教程: https://uniapp.dcloud.net.cn/uniCloud/schema
+{
+	"bsonType": "object",
+	"required": ["user","img"],
+	"permission": {
+		"read":true,
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"uni_id":{
+			"bsonType": "string",
+			"title": "用户id",
+			"description": "当前用户id",
+			"foreignKey": "uni-id-users._id"
+		},
+		"user":{
+			"bsonType": "string",
+			"title": "姓名",
+			"description": "请输入姓名"
+		},
+		"index":{
+			"bsonType": "string",
+			"title": "排序",
+			"description": "index"
+		},
+		"img":{
+			"bsonType": "file",
+			"title": "图片",
+			"description": "图片",
+			"fileMediaType": "image"
+		},
+		"price":{
+			"bsonType": "string",
+			"title": "价格",
+			"description": "价格"
+		},
+		"year":{
+			"bsonType": "string",
+			"title": "年份",
+			"description": "年份"
+		},
+		"repertory":{
+			"bsonType": "bool",
+			"title": "库存",
+			"description": "库存"
+		}
+		
+	}
+}

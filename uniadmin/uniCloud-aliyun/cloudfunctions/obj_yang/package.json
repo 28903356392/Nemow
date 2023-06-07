@@ -1,0 +1,7 @@
+{
+  "name": "obj_yang",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}
