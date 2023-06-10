@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "navi-gation": "/components/navigation/navigation",
+    "grid-index": "/components/gridIndex/gridIndex",
+    "notice-index": "/components/noticeIndex/noticeIndex",
+    "drop-slide": "/components/dropSlide/dropSlide"
+  }
+}
