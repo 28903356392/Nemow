@@ -28,7 +28,7 @@
 		methods:{
 			onfocus(){
 				uni.navigateTo({
-					url:""
+					url:"/"
 				})
 			}
 		}

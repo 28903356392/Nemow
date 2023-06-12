@@ -14,10 +14,6 @@
 	import myBalance  from "@/components/my_balance/my_balance.vue"
 	import myTook from "@/components/my_took/my_took.vue"
 	import myBase  from "@/components/my_base/my_base.vue"
-	
-	
-	
-	
 	export default {
 		data() {
 			return {
