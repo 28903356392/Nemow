@@ -1,1 +1,0 @@
-<view id="cont" class="data-v-073adf44"><u-search vue-id="3fbceb7c-1" border-color="#17BBF8" height="70rpx" shape="round" actionStyle="{{actionStyle}}" placeholder="{{placeholder}}" data-event-opts="{{[['^focus',[['onfocus']]]]}}" bind:focus="__e" class="data-v-073adf44" bind:__l="__l"></u-search></view>

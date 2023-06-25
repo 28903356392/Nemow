@@ -1,1 +1,0 @@
-<view class="my_header"><view class="my_header_1"><u-avatar vue-id="282dd100-1" src="{{src}}" size="60" bind:__l="__l"></u-avatar><view class="my_header_1_2"><view>6a2sdasfs<text>？</text></view><text>17683866331</text></view></view><view class="my_header_2"><text>账户设置</text></view></view>
