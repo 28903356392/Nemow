@@ -1,3 +1,7 @@
+//node.js 环境执行依赖
+//npm i @types/node -g
+//npm i ts-node --g
+
 //tsc --init 曝光严格模式ts.config.json
 
 //string
