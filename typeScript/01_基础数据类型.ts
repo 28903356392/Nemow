@@ -1,3 +1,6 @@
+namespace A1 {
+  export const a1 = 'a'
+}
 //node.js 环境执行依赖
 //npm i @types/node -g
 //npm i ts-node --g
@@ -23,3 +26,5 @@ var a4:undefined = undefined
 var a65 = ():void=>{
     return
 }
+
+
