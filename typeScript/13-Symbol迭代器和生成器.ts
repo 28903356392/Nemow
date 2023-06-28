@@ -2,17 +2,17 @@
 
 //todo symbol 的值是唯一的
 
-let s1 =Symbol()
-let s2 =Symbol()
+let ss1 =Symbol()
+let ss2 =Symbol()
 // console.log(s1==s2); false
 
 
 //todo 可作为对象属性的键
 
-let s3 =Symbol()
+let ss3 =Symbol()
 
 let obj = {
-   [s3]:'value'
+   [ss3]:'value'
 }
 // console.log(obj[s3]);
 

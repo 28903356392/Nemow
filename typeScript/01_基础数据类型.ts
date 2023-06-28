@@ -1,4 +1,4 @@
-namespace A1 {
+namespace aaa1 {
   export const a1 = 'a'
 }
 //node.js 环境执行依赖
