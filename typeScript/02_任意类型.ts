@@ -1,4 +1,4 @@
-//所有类型都可分配给 any | unknown   unknown更加安全、严格
+//所有类型都可分配给 any所有 | unknown未声明   unknown更加安全、严格
 
 //unknown 可赋值对象只有 unknown any 
 
