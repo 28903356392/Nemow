@@ -25,26 +25,33 @@ enum out{
 class Storages implements setvalue{
    get(key:Key){
       if(key){
-         let keys= localStorage.getItem(key) as string
-         console.log(JSON.parse(keys));
-         
-         return keys
+         let keys= JSON.parse(localStorage.getItem(key) as string)
+         console.log();
+         if(new Date().getTime() / 1000 < keys.value){
+           return keys
+         }else{
+          return{
+            message:`已过期，请重新设置`,
+          }
+         }
+        
       }
    } 
    set(key:Key,value:any,time?:out|number){
       if(value!=undefined && value!=null ){
          let va ={
-          value,
-          time
+          value:value,
+          time:(typeof time=='number'?time:0) +Number(new Date().getTime()) / 1000  //毫秒转秒
          }
          if(time!=0){
-            localStorage.setItem('key',JSON.stringify(va))
+            
+            localStorage.setItem(key,JSON.stringify(va))
             return{
               message:`过期设置`,
               value:value
             }
          }else if(time==0){
-            localStorage.setItem('key',JSON.stringify(va))
+            localStorage.setItem(key,JSON.stringify(va))
             return{
               message:`永不过期设置`,
               value:value
