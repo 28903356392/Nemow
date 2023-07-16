@@ -1,4 +1,5 @@
 var a = new Date().toLocaleString();
+console.log(new Date().getTime());
 var out;
 (function (out) {
     out[out["yes"] = 0] = "yes";
@@ -9,8 +10,8 @@ var Storages = /** @class */ (function () {
     }
     Storages.prototype.get = function (key) {
         if (key) {
-            var keys = localStorage.getItem(key);
-            console.log(JSON.parse(keys));
+            var keys = JSON.parse(localStorage.getItem(key));
+            console.log(keys.value);
             return keys;
         }
     };
@@ -18,17 +19,17 @@ var Storages = /** @class */ (function () {
         if (value != undefined && value != null) {
             var va = {
                 value: value,
-                time: time
+                time: (typeof time == 'number' ? time : 0) + Number(new Date().getTime()) / 1000
             };
             if (time != 0) {
-                localStorage.setItem('key', JSON.stringify(va));
+                localStorage.setItem(key, JSON.stringify(va));
                 return {
                     message: "\u8FC7\u671F\u8BBE\u7F6E",
                     value: value
                 };
             }
             else if (time == 0) {
-                localStorage.setItem('key', JSON.stringify(va));
+                localStorage.setItem(key, JSON.stringify(va));
                 return {
                     message: "\u6C38\u4E0D\u8FC7\u671F\u8BBE\u7F6E",
                     value: value
