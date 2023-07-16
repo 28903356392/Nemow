@@ -18,6 +18,10 @@ interface setvalue{
   remove:(key:Key)=>void
   clear:()=>void
 }
+interface vas{
+    value:Object
+    time?:number
+}
 enum out{
   yes,
   no
@@ -25,7 +29,7 @@ enum out{
 class Storages implements setvalue{
    get(key:Key){
       if(key){
-         let keys= localStorage.getItem(key) as string
+         let keys= localStorage.getItem(key)
          console.log(JSON.parse(keys));
          
          return keys
@@ -33,7 +37,7 @@ class Storages implements setvalue{
    } 
    set(key:Key,value:any,time?:out|number){
       if(value!=undefined && value!=null ){
-         let va ={
+         let va:vas ={
           value,
           time
          }

@@ -1,0 +1,83 @@
+<script setup lang="ts">
+import { ref,useAttrs,provide,inject} from 'vue'
+
+defineProps(['msg']) //props父传子
+//自定义事件 子传父
+
+//v-model:msg='asd' 加props+自定义事件双向绑定
+
+//mitt 事件总线bus插件
+
+defineExpose({
+  const
+})//暴露子组件方法数据给外面使用
+//
+//ref获取元素联合&perent 自定义事件获取
+useAttrs()  //获取父组件传递的方法数据比props强，props优先级高
+
+
+//祖孙传值provide传值，inject获取
+provide('token','asd')
+inject('token')
+
+
+//pinia //vue3的集中状态管理  和vuex差不多
+
+
+//插槽slot 默认插槽、剧名插槽、作用于插槽
+
+
+
+//安装eslint 参考官网
+//npm install eslint -D
+//生成 eslint.cjs  
+///npx eslint --init
+//根目录创建.eslintignore  过滤不检验的文件     
+
+//prettier //代码美化 prettier 
+//npm install -D eslint-plugin-prettier prettier eslint-config-prettier
+//创建.prettierrc.json检查   .prettierignore忽略文件   
+
+
+//stylelintrc.cjs css检查文件
+
+
+//husky ，提交时格式化代码
+
+//commitlint 提交commit时规则
+
+
+// 
+const count = ref(0)
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <img src="../assets//eslint.png" alt="" srcset="">
+  <div class="card">
+    <button type="button" @click="count++">count is {{ count }}</button>
+    <p>
+      Edit
+      <code>components/HelloWorld.vue</code> to test HMR
+    </p>
+  </div>
+
+  <p>
+    Check out
+    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
+      >create-vue</a
+    >, the official Vue + Vite starter
+  </p>
+  <p>
+    Install
+    <a href="https://github.com/vuejs/language-tools" target="_blank">Volar</a>
+    in your IDE for a better DX
+  </p>
+  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+</template>
+
+<style scoped>
+.read-the-docs {
+  color: #888;
+}
+</style>
