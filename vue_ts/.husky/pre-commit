@@ -2,4 +2,5 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 cd "$(dirname -- "$0")"
-npm run lint
+npx lint-staged
+
