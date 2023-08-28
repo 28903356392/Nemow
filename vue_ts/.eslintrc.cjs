@@ -89,7 +89,7 @@ module.exports = {
     // 强制文件以换行符结束（文件以一空行结束）
     'eol-last': 2,
     // 强制使用 === 和 !== 但不将此规则应用于 null
-    eqeqeq: ['error', 'always', { null: 'ignore' }],
+    //eqeqeq: ['error', 'always', { null: 'ignore' }],
     // 使用生成器时关键字 * 前后均须有空格
     'generator-star-spacing': [
       2,
