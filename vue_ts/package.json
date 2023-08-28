@@ -38,7 +38,10 @@
     ]
   },
   "dependencies": {
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "sass": "^1.65.1"
   },
   "devDependencies": {
     "@babel/core": "^7.22.10",
@@ -48,9 +51,11 @@
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
     "@vitejs/plugin-vue": "^4.2.3",
+    "@vitejs/plugin-vue-jsx": "^3.0.2",
     "commitizen": "^4.3.0",
     "cross-var": "^1.1.0",
     "cz-conventional-changelog": "^3.3.0",
+    "cz-conventional-changelog-zh": "^0.0.2",
     "eslint": "^8.47.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
@@ -60,7 +65,6 @@
     "postcss": "^8.4.28",
     "postcss-html": "^1.5.0",
     "prettier": "^3.0.1",
-    "sass": "^1.65.1",
     "sass-loader": "^13.3.2",
     "stylelint": "^14.9.1",
     "stylelint-config-html": "^1.1.0",
@@ -71,14 +75,12 @@
     "stylelint-config-standard-vue": "^1.0.0",
     "stylelint-no-unsupported-browser-features": "^5.0.3",
     "stylelint-order": "^6.0.3",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5",
     "vite-plugin-eslint": "^1.8.1",
     "vue-tsc": "^1.8.5"
   },
   "config": {
     "commitizen": {
-      "path": "./$npm_package_name/node_modules/cz-conventional-changelog"
+      "path": "./vue_ts/node_modules/cz-conventional-changelog-zh"
     }
   }
 }
