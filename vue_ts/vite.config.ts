@@ -9,6 +9,8 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import Icons from 'unplugin-icons/vite'
+import IconsResover from 'unplugin-icons/resolver'
 
 /** 路径配置 自带的path */
 import { resolve } from 'path'
@@ -16,13 +18,11 @@ import { resolve } from 'path'
 
 // 配置快捷路径
 const alias: Record<string, string> = {
-  '@': resolve(__dirname, 'src'),
+  '@': resolve(__dirname, './src'),
 }
-console.log(alias)
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd())
-  console.log(env, mode)
   return {
     base: '/',
     resolve: { alias },
@@ -43,10 +43,14 @@ export default defineConfig(({ command, mode }) => {
       eslintPlugin(),
       vueJsx({}),
       AutoImport({
-        resolvers: [ElementPlusResolver()],
+        imports: ['vue', 'vue-router'],
+        resolvers: [ElementPlusResolver(), IconsResover({ prefix: 'Icon' })],
       }),
       Components({
-        resolvers: [ElementPlusResolver()],
+        resolvers: [ElementPlusResolver(), IconsResover({ enabledCollections: ['eq'] })],
+      }),
+      Icons({
+        autoInstall: true,
       }),
     ],
     // 配置打包
@@ -54,6 +58,8 @@ export default defineConfig(({ command, mode }) => {
       outDir: 'dist', // 相对根目录下的路径
       sourcemap: false, // 是否生成源map
       chunkSizeWarningLimit: 1500, // 触发chunk警告大小
+      assetsDir: 'assets',
+      minify: 'terser',
       rollupOptions: {
         output: {
           // 输出文件  https://rollupjs.org/guide/en/#big-list-of-options
@@ -62,22 +68,21 @@ export default defineConfig(({ command, mode }) => {
           assetFileNames: `static/[ext]/[name]-asset-[hash].${new Date().getTime()}.[ext]`, // 用于命名自定义发射资产以包含在构建输出中的模式
           compact: true, // 这将缩小汇总生成的包装器代码。请注意，这不会影响用户编写的代码。此选项在捆绑预压缩代码时很有用
           manualChunks: {
-            // 创建自定义共享公共块
+            /** 创建自定义共享公共块 */
             vue: ['vue'],
           },
         },
       },
       terserOptions: {
-        // https://terser.org/docs/api-reference#minify-options
+        /** 删除console.*的代码   删除断点 */
         compress: {
-          // 自定义压缩
-          drop_console: true, // 删除console.*的代码
-          drop_debugger: true, // 删除断点
+          drop_console: true,
+          drop_debugger: true,
         },
-        ie8: true, // 支持ie8
+        ie8: true,
         output: {
-          // 输出代码格式
-          comments: true, // 保留所有注释
+          /** 保留所有注释*/
+          comments: true,
         },
       },
     },

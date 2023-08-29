@@ -1,3 +1,4 @@
 export interface userTpye {
-  count: number
+  count: Ref<number>
+  inis(): { <T>(): T }
 }

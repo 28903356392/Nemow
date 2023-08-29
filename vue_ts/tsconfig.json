@@ -20,8 +20,19 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    //! 解决import.meta.env引用报错.env不存在
+    "types": ["vite/client"],
+
+    //path
+    "baseUrl": ".",
+    "paths": {
+      // @ 路径配置
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  /**创建element-puls.d.ts引入可识别弹窗等*/
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "auto-imports.d.ts", "element-puls.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
