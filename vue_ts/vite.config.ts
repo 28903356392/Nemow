@@ -44,10 +44,12 @@ export default defineConfig(({ command, mode }) => {
       vueJsx({}),
       AutoImport({
         imports: ['vue', 'vue-router'],
+        dts: './src/types/auto-import.d.ts',
         resolvers: [ElementPlusResolver(), IconsResover({ prefix: 'Icon' })],
       }),
       Components({
         resolvers: [ElementPlusResolver(), IconsResover({ enabledCollections: ['eq'] })],
+        dts: './src/types/components.d.ts',
       }),
       Icons({
         autoInstall: true,
@@ -91,7 +93,7 @@ export default defineConfig(({ command, mode }) => {
         // 给 sass-loader 传递选项
         scss: {
           // additionalData 的值就是要注入的字符串 注入变量
-          additionalData: '@import "@/style.css";',
+          // additionalData: '@import "@/style.scss";',
         },
       },
     },

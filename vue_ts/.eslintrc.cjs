@@ -264,7 +264,7 @@ module.exports = {
     // 禁止在行尾添加尾随空白（空格，制表符和其他 Unicode 空白字符）
     'no-trailing-spaces': 2,
     // 禁止引用未声明的变量
-    'no-undef': 2,
+    'no-undef': 0,
     // 禁止使用 undefined 来初始化变量
     'no-undef-init': 2,
     // 禁止混淆多行表达式

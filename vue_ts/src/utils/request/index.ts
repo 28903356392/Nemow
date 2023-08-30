@@ -6,7 +6,7 @@ import { getToken } from '@/utils/aunt'
 interface api {
   url: string
   method: 'get' | 'post' | 'delete' | 'put'
-  data?: string
+  data?: object
 }
 
 interface HTTP {

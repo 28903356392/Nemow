@@ -15,6 +15,13 @@ const routes = [
       return import('../components/BA.vue')
     },
   },
+  {
+    path: '/',
+    name: 'login',
+    component: () => {
+      return import('../views/ULogin.vue')
+    },
+  },
   { path: '/:pathMatch(.*)', redirect: '/home', hidden: true }, // 不存在页面重定向到
 ]
 const router = createRouter({
@@ -25,10 +32,9 @@ const router = createRouter({
 router.beforeEach((_to, _from, next) => {
   if (_to.path == '/home') {
     next()
-  } else if (_to.path == '/ba') {
+  } else {
     next()
   }
-  console.log(_to.path)
 })
 
 export default router
