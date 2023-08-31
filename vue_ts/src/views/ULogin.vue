@@ -25,7 +25,9 @@
 <script lang="ts" setup>
 import type { FormInstance, FormRules } from 'element-plus'
 import { userLogin, TypeLogin as RuleForm } from '@/api'
-
+import { userAppStrote } from '@/store'
+const userStrote = userAppStrote()
+const rouer = useRouter()
 // 表单使用变量
 const formSize: any = ref('default')
 const ruleFormRef = ref<FormInstance>()
@@ -47,20 +49,17 @@ const rules = reactive<FormRules<RuleForm>>({
     { min: 1, max: 10, message: 'Length should be 1 to 10', trigger: 'blur' },
   ],
 })
-var timer: any = null
 // 登录
 const submitForm = async (formEl: FormInstance | undefined) => {
   if (!formEl) return
   await formEl.validate((valid, fields) => {
     if (valid) {
       // 节流  1秒钟内点击生效一次
-      if (timer != null) return null
-      timer = setTimeout(() => {
-        userLogin(ruleForm).then(res => {
-          timer = null
-          console.log(res)
-        })
-      }, 1 * 1000)
+      userStrote.AntiShake(userLogin, ruleForm, 5).then(res => {
+        if (res != false) {
+          rouer.push('/home')
+        }
+      })
     } else {
       console.log('error submit!', fields)
     }

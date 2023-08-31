@@ -1,7 +1,5 @@
 <template>
   <div id="ss">{{ init }}</div>
-  <h2>{{ userStore.count }}</h2>
-  <el-button @click="userStore.inis">start</el-button>
 </template>
 
 <script setup lang="ts">

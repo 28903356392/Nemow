@@ -10,10 +10,27 @@ const userAppStrote = defineStore(
       ProductType.value = res.data.ProductType
     })
 
-    // s
+    // 防抖
+    var timer: any = null
+    const AntiShake = (request: any, params: object, time: number) => {
+      return new Promise(async r => {
+        if (timer == null) {
+          timer = setTimeout(() => {
+            request(params).then((res: any) => {
+              timer = null
+              r(res)
+            })
+          }, time * 1000)
+        } else {
+          r(false)
+        }
+      })
+    }
     return {
       ProductType,
       productType,
+      timer,
+      AntiShake,
     }
   },
   {
