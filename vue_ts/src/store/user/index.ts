@@ -1,14 +1,11 @@
 import { defineStore } from 'pinia'
 import { userTpye } from './types'
-import { productType } from '@/api'
+import axios from 'axios'
+
 const userAppStrote = defineStore(
   'useAppStrote',
   (): userTpye => {
     // 产品类型
-    const ProductType = ref('2')
-    productType().then((res: any) => {
-      ProductType.value = res.data.ProductType
-    })
 
     // 防抖
     var timer: any = null
@@ -16,21 +13,36 @@ const userAppStrote = defineStore(
       return new Promise(async r => {
         if (timer == null) {
           timer = setTimeout(() => {
-            request(params).then((res: any) => {
-              timer = null
-              r(res)
-            })
+            request(params)
+              .then((res: any) => {
+                timer = null
+                r(res)
+              })
+              .catch(() => {
+                r(false)
+              })
           }, time * 1000)
         } else {
           r(false)
         }
       })
     }
+    // 登录
+    const web_doc = async () => {
+      var par = {
+        username: 'turin',
+        password: 'memohi2020',
+        recaptcha: '',
+      }
+      console.log(import.meta.env, (import.meta.env as any).MODE == 'development')
+
+      const url = (import.meta.env as any).MODE == 'development' ? '/web' : import.meta.env.VITE_BASE_URL
+      return await axios.post(url + '/api/login', par)
+    }
     return {
-      ProductType,
-      productType,
       timer,
       AntiShake,
+      web_doc,
     }
   },
   {

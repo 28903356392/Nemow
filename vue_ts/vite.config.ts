@@ -23,6 +23,7 @@ const alias: Record<string, string> = {
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd())
+  console.log(env.VITE_BASE_URL)
   return {
     base: '/',
     resolve: { alias },
@@ -34,7 +35,12 @@ export default defineConfig(({ command, mode }) => {
         [env.VITE_BASE_API]: {
           target: env.VITE_BASE_URL,
           changeOrigin: true,
-          rewrite: path => path.replace('^' + env.VITE_BASE_API, ''),
+          rewrite: path => path.replace(/^\/api/, ''),
+        },
+        [env.VITE_BASE_API_WEB]: {
+          target: env.VITE_BASE_URL_WEB,
+          changeOrigin: true,
+          rewrite: path => path.replace(/^\/web/, ''),
         },
       },
     },

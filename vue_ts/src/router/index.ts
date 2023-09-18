@@ -2,27 +2,13 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/home',
-    name: 'Home',
-    component: () => {
-      return import('../components/HomeMode.vue')
-    },
-  },
-  {
-    path: '/ba',
-    name: 'ba',
-    component: () => {
-      return import('../components/BA.vue')
-    },
-  },
-  {
     path: '/',
-    name: 'login',
+    name: 'search',
     component: () => {
-      return import('../views/ULogin.vue')
+      return import('../views/SearCh.vue')
     },
   },
-  { path: '/:pathMatch(.*)', redirect: '/home', hidden: true }, // 不存在页面重定向到
+  { path: '/:pathMatch(.*)', redirect: '/', hidden: true }, // 不存在页面重定向到
 ]
 const router = createRouter({
   history: createWebHashHistory(),
@@ -30,10 +16,10 @@ const router = createRouter({
 })
 
 router.beforeEach((_to, _from, next) => {
-  if (_to.path == '/home') {
+  if (_to.path == '/') {
     next()
   } else {
-    next()
+    next('/')
   }
 })
 

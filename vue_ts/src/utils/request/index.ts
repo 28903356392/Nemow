@@ -6,7 +6,7 @@ import { getToken } from '@/utils/aunt'
 interface api {
   url: string
   method: 'get' | 'post' | 'delete' | 'put'
-  data?: object
+  data: object | string
 }
 
 interface HTTP {
@@ -15,7 +15,7 @@ interface HTTP {
 
 class Requests implements HTTP {
   service = axios.create({
-    baseURL: import.meta.env.VITE_BASE_URL,
+    baseURL: import.meta.env.VITE_BASE_API,
     // timeout: 10000,
   })
   constructor() {
@@ -61,6 +61,8 @@ class Requests implements HTTP {
     )
   }
   request(config: AxiosRequestConfig) {
+    console.log(config)
+
     return new Promise(resolve => {
       this.service.request<any, AxiosResponse<IResponse>>(config).then((res: AxiosResponse<IResponse>) => {
         const { data } = res
