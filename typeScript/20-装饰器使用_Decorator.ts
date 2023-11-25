@@ -18,7 +18,7 @@ const vv:ClassDecorator=(tag:Function)=>{
 @vv
 class a11{
   constructor(){
-
+    
   }
 }
 

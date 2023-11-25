@@ -11,7 +11,7 @@ let xxx={
 
 const namexxx = (Y:any)=>{
   return new Proxy(Y,{
-    //拦截对象的读取
+    /**拦截对象的读取*/
     get(target,key,receiver){//获取
        return Reflect.get(target,key,receiver)
     },  

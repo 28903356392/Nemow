@@ -3,12 +3,12 @@
 /**
  * !Readonly
  * Make all properties in T optional
-  将T中的所有属性设置为可选
+ * 将T中的所有属性设置为只读
+ * 与ts自带的Partial冲突才加的Partialeds,可直接使用Partial
  */
   type Partialeds<T> = {
     readonly [P in keyof T]: T[P];
 };
-
 
 type Personed = {
   name:string,
@@ -17,9 +17,9 @@ type Personed = {
 }
 
 /**
- * 转换后全部属性为可选 keyof取出属性变成联合类型  ,
+ * 转换后全部属性为只读 keyof取出属性变成再声明为只读,
  * in类似for in遍历   ,
- * ?变为可选,
+ * readonly变为只读,
  * T[P]索引访问,
  **/
 type ps =Partialeds<Personed>
@@ -34,6 +34,7 @@ type ps =Partialeds<Personed>
  *   text:'',
  *   age:1
  * }
+ * 限制键值对
  **/ 
 
  type Records<K extends keyof any, T>={
@@ -49,7 +50,3 @@ type ps =Partialeds<Personed>
     age:1
   }
  }
-
-
-
-

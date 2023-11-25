@@ -2,5 +2,5 @@
 
 type Infer<T> =T extends Array<infer U> ? U :T
 
-type B = Infer<Array<number | null>>
+type D = Infer<Array<number | null>>
 

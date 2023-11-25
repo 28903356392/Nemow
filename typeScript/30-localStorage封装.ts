@@ -29,12 +29,6 @@ enum out{
 class Storages implements setvalue{
    get(key:Key){
       if(key){
-<<<<<<< HEAD:typeScript/index.ts
-         let keys= localStorage.getItem(key)
-         console.log(JSON.parse(keys));
-         
-         return keys
-=======
          let keys= JSON.parse(localStorage.getItem(key) as string)
          console.log();
          if(new Date().getTime() / 1000 < keys.value){
@@ -45,20 +39,13 @@ class Storages implements setvalue{
           }
          }
         
->>>>>>> a309424dd13def6b3b95b821aac7949c44aae957:typeScript/30-localStorage封装.ts
       }
    } 
    set(key:Key,value:any,time?:out|number){
       if(value!=undefined && value!=null ){
-<<<<<<< HEAD:typeScript/index.ts
-         let va:vas ={
-          value,
-          time
-=======
          let va ={
           value:value,
           time:(typeof time=='number'?time:0) +Number(new Date().getTime()) / 1000  //毫秒转秒
->>>>>>> a309424dd13def6b3b95b821aac7949c44aae957:typeScript/30-localStorage封装.ts
          }
          if(time!=0){
             

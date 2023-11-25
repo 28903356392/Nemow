@@ -27,3 +27,9 @@ declare module 'express' {
   const express: Express
   export default express
 }
+
+// 导入使用
+// import express from 'express';
+// 对着声明时导出的接口
+// express.Router().get
+// express().use

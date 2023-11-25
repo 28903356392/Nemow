@@ -19,7 +19,7 @@ let na1:name1={
 }
 
 const nn=Object.assign(na,na1)
-console.log(nn);
+console.log(nn);  // { name: 'ASD', age: 22 }
 
 
 //!  2.类的混入
@@ -49,7 +49,7 @@ class C2 implements A1,A2 {
     name: string='张三';
     getName(): string {return this.name}
 }
-console.log(Object.getOwnPropertyNames(Object.create(A2).prototype));
+console.log(Object.getOwnPropertyNames(Object.create(A2).prototype)); // [ 'constructor', 'getName' ]
 
 
 //?2
@@ -57,7 +57,6 @@ console.log(Object.getOwnPropertyNames(Object.create(A2).prototype));
 
 
 Mixins(C2, [A1, A2])
-
 function Mixins(curCls:any,itemCls:any[]){
   itemCls.forEach(item=>{
     //Object.getOwnPropertyNames()可以获取对象自身的属性，除去他继承来的属性，
@@ -66,5 +65,3 @@ function Mixins(curCls:any,itemCls:any[]){
     })
   })
 }
-
-
