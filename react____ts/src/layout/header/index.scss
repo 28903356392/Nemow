@@ -1,0 +1,25 @@
+.header {
+  height: 64px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 8px 0 #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+
+  >img {
+    width: 180px;
+    max-height: 58px;
+    display: inline-block;
+  }
+
+  .Select_dis_bor {
+    // .ant-select-selector {
+    //   border-color: transparent !important;
+    // }
+
+
+  }
+
+}
