@@ -1,3 +1,4 @@
+// 类型定义
 export interface userTpye {
   ProductType: Ref<string>
   productType: () => Promise<unknown>

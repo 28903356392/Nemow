@@ -26,8 +26,13 @@
 import type { FormInstance, FormRules } from 'element-plus'
 import { userLogin, TypeLogin as RuleForm } from '@/api'
 import { userAppStrote } from '@/store'
+import { storeToRefs } from 'pinia'
 const userStrote = userAppStrote()
 const rouer = useRouter()
+const { ProductType } = storeToRefs(userStrote)
+
+console.log(ProductType)
+
 // 表单使用变量
 const formSize: any = ref('default')
 const ruleFormRef = ref<FormInstance>()
