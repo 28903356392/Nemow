@@ -1,0 +1,54 @@
+{
+  "name": "react_js",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^7.1.0",
+    "@reduxjs/toolkit": "^2.2.1",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "antd": "^5.15.1",
+    "classnames": "^2.5.1",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
+    "react-router-dom": "^6.22.2",
+    "react-scripts": "5.0.1",
+    "source-map-explorer": "^2.5.3",
+    "vue": "^2.7.16",
+    "web-vitals": "^2.1.4",
+    "zustand": "^4.5.2"
+  },
+  "scripts": {
+    "dev": "craco start",
+    "server": "json-server ./server/data.json --port 8080",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "anlazy": "source-map-explorer 'build/static/js/*.js'"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "sacc": "^0.0.1",
+    "sass": "^1.71.1"
+  }
+}
