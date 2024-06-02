@@ -86,5 +86,48 @@ const a = ()=>{
   function f2(a:string,b:string):string[]{
     return [a,b]
   }
+  f2('1','20')
+
+  // 泛型变量T T表示任何类型
+  function f3<T>(a:T,b:T):T[]{
+    return [a,b]
+  }
+  f3('1','20')
+  f3(1,20)
+
+  //T表示任何类型
+  // 泛型约束
+  interface ILength{
+    length:number
+  }
+
+  function f4<T extends ILength>(s:T):number{
+    return s.length
+  }
+  f4<string>('Hello')
+  f4([1,2,3,4,5])
+  
+  // 可以在接口后或者函数前定义T
+  interface Iinspostion<T>{
+    <T>(a:T,b:T):boolean
+  }
+  // 扩展提 简化代码 三元和全等简化函数
+  // 定义一个函数，判断传入的参数是否一样
+  // function fn1<T>(s1:T,s2:T):boolean{
+  //   return s1===s2
+  // }
+  // fn1(1,1)
+
+  let fn1:Iinspostion<string>=(s1,s2)=>s1===s2 
+
+  // function fn2<T>(s1:T,s2:T):boolean{
+  //   if(s1>s2){
+  //     return true
+  //   }else{
+  //     return false
+  //   }
+  // }
+
+  let fn2=<T>(s1:T,s2:T):boolean=>s1>s2?true:false
 }
-a()
+a() 
