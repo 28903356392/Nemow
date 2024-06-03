@@ -7,14 +7,8 @@ const routes:RouteRecordRaw[] =[
     },{
         path:'/home',
         name:'home',
-        component:()=>import('../components/layout/index.vue'),
-        children:[
-            {
-                path:'/index',
-                name:'index',
-                component:()=>import("../vite/index/index.vue")
-            }
-        ]
+        component:()=>import('../vite/Home/index.vue'),
+        
     }
 ]
 
