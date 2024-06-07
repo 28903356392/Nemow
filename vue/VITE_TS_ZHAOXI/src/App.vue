@@ -1,18 +1,14 @@
 <script setup lang="ts">
+import router from "./router"
+const routerList= router.options.routes.filter(item=>item.path!='/')
+
 </script>
 
 <template>
-  <div>
+    <router-link :to="item.path" v-for="item in routerList">{{ item.name }} | </router-link>
     <router-view></router-view>
-  </div>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
 
 </style>

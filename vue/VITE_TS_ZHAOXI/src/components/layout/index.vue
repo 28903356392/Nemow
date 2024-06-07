@@ -2,15 +2,11 @@
 </script>
 
 <template>
-  <div class="common-layout">
-    <el-container>
-      <el-header>Header</el-header>
-      <el-container>
-        <el-aside width="200px">Aside</el-aside>
-        <el-main>Main</el-main>
-      </el-container>
-    </el-container>
-  </div>
+  <el-row :gutter="20">
+    <el-col :span="4"><div class="grid-content ep-bg-purple" />add</el-col>
+    <el-col :span="16"><div class="grid-content ep-bg-purple" /></el-col>
+    <el-col :span="4"><div class="grid-content ep-bg-purple" />vdd</el-col>
+  </el-row>
 </template>
 
 <style scoped>

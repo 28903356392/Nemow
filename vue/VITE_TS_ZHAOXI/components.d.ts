@@ -9,9 +9,11 @@ declare module 'vue' {
   export interface GlobalComponents {
     ContentArea: typeof import('./src/components/ContentArea/index.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
+    ElCol: typeof import('element-plus/es')['ElCol']
     ElContainer: typeof import('element-plus/es')['ElContainer']
     ElHeader: typeof import('element-plus/es')['ElHeader']
     ElMain: typeof import('element-plus/es')['ElMain']
+    ElRow: typeof import('element-plus/es')['ElRow']
     Layout: typeof import('./src/components/Layout/index.vue')['default']
     MenuClassification: typeof import('./src/components/MenuClassification/index.vue')['default']
     Navigation: typeof import('./src/components/Navigation/index.vue')['default']
