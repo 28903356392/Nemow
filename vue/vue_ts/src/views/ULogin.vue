@@ -32,11 +32,9 @@ const rouer = useRouter()
 const { ProductType } = storeToRefs(userStrote)
 
 console.log(ProductType)
-
 // 表单使用变量
 const formSize: any = ref('default')
 const ruleFormRef = ref<FormInstance>()
-
 // 账号密码
 const ruleForm = reactive<RuleForm>({
   username: '',
